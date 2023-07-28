@@ -10,7 +10,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar max-w-screen-xl bg-opacity-30 bg-lime-100 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const Navbar = () => {
                         {NavRoutes}
                     </ul>
                 </div>
-                <Link> <a className="btn btn-sm bg-lime-300 md:ms-10">Login</a></Link>
+                <Link to='/login'> <a className="btn btn-sm bg-lime-300 md:ms-10">Login</a></Link>
             </div>
         </div >
     );
