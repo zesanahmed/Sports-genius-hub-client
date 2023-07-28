@@ -51,6 +51,9 @@ const Footer = () => {
                         <p className="text-sm">Phone: (+880) 1954500994</p>
                     </div>
                 </div>
+                <div className="border-t border-gray-600 mt-6 pt-6 text-sm text-center">
+                    <p>&copy; {new Date().getFullYear()} Sports Genius Hub. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );
