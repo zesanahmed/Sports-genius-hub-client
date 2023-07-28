@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
-const Login = () => {
+const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
 
@@ -11,7 +11,7 @@ const Login = () => {
     };
 
 
-    const handleLogin = event => {
+    const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -28,10 +28,10 @@ const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center gap-10 bg-lime-100">
             <div>
-                <img className='h-96 w-96' src="https://img.freepik.com/free-vector/sport-equipment-concept_1284-13034.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph" alt="" />
+                <img className='h-96 w-96' src="https://img.freepik.com/free-vector/summer-sports-concept_1284-9394.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph" alt="" />
             </div>
-            <form onSubmit={handleLogin} className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-4">Login to Sports Genius Hub</h2>
+            <form onSubmit={handleSignUp} className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
+                <h2 className="text-2xl font-bold mb-4">SignUp to Sports Genius Hub</h2>
                 <div className="mb-4">
                     <label htmlFor="email" className="block text-gray-700">Email</label>
                     <input
@@ -64,7 +64,7 @@ const Login = () => {
                         type="submit"
                         className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
                     >
-                        Log In
+                        SignUp
                     </button>
                 </div>
 
@@ -76,11 +76,11 @@ const Login = () => {
                             <i className="fab fa-facebook-f"></i>
                         </a>
                     </div>
-                    <p>Do Not Have An Account? Please, <Link className='text-lg font-semibold text-lime-600' to='/signUp'>SignUp</Link></p>
+                    <p>Already Have an Account? Please, <Link className='text-lg font-semibold text-lime-600' to='/login'>Login</Link></p>
                 </div>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
