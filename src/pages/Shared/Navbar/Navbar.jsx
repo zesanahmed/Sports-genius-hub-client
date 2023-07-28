@@ -32,7 +32,7 @@ const Navbar = () => {
                         {NavRoutes}
                     </ul>
                 </div>
-                <Link to='/login'> <a className="btn btn-sm bg-lime-300 md:ms-10 
+                <Link to='/login'> <a className="btn bg-lime-600 font-bold text-white md:ms-10 
                  mr-4">Login</a></Link>
             </div>
         </div >

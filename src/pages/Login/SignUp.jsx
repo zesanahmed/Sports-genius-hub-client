@@ -14,9 +14,16 @@ const SignUp = () => {
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        const confirmPassword = form.confirmPassword.value;
+        const photoURL = form.photoURL.value;
+        if (password !== confirmPassword) {
+            alert("Please make sure , Your password match");
+            return;
+        }
+        console.log(name, email, password, confirmPassword, photoURL);
         signIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -26,12 +33,21 @@ const SignUp = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center gap-10 bg-lime-100">
+        <div className="min-h-screen md:flex items-center justify-center gap-10 bg-lime-100">
             <div>
                 <img className='h-96 w-96' src="https://img.freepik.com/free-vector/summer-sports-concept_1284-9394.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph" alt="" />
             </div>
-            <form onSubmit={handleSignUp} className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
+            <form onSubmit={handleSignUp} className="bg-white p-6 rounded-md shadow-md w-full max-w-md md:my-24">
                 <h2 className="text-2xl font-bold mb-4">SignUp to Sports Genius Hub</h2>
+                <div className="mb-4">
+                    <label htmlFor="name" className="block text-gray-700">Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+                        placeholder="Enter your name"
+                    />
+                </div>
                 <div className="mb-4">
                     <label htmlFor="email" className="block text-gray-700">Email</label>
                     <input
@@ -58,6 +74,33 @@ const SignUp = () => {
                             {showPassword ? "Hide" : "Show"}
                         </button>
                     </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
+                    <div className="relative">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            name="confirmPassword"
+                            className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+                            placeholder="Confirm your password"
+                        />
+                        <button
+                            type="button"
+                            className="absolute top-2 right-3 text-gray-600"
+                            onClick={handlePasswordToggle}
+                        >
+                            {showPassword ? "Hide" : "Show"}
+                        </button>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="photoURL" className="block text-gray-700">Photo URL</label>
+                    <input
+                        type="text"
+                        name="photoURL"
+                        className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+                        placeholder="URL"
+                    />
                 </div>
                 <div className="mt-6">
                     <button
