@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
 
     const NavRoutes = <>
-        <li><a>Item 1</a></li>
-        <li><a>Parent</a></li>
-        <li><a>Item 3</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link>Instructors</Link></li>
+        <li><Link>Dashboard</Link></li>
     </>
 
     return (
@@ -19,17 +20,21 @@ const Navbar = () => {
                         {NavRoutes}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {NavRoutes}
-                </ul>
+                <Link to='/'>
+                    <div className="">
+                        <span className="md:text-4xl font-bold text-lime-500">Sports</span>
+                        <span className="md:text-4xl font-bold"> Genius</span> <span className="text-base pt-5">Hub</span></div>
+                </Link>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <div className="hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1">
+                        {NavRoutes}
+                    </ul>
+                </div>
+                <Link> <a className="btn btn-sm bg-lime-300 md:ms-10">Login</a></Link>
             </div>
-        </div>
+        </div >
     );
 };
 
