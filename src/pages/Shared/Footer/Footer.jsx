@@ -17,16 +17,16 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/" className="text-blue-400 hover:underline">Home</Link>
+                                <Link to="/" className="text-lime-300 hover:underline">Home</Link>
                             </li>
                             <li>
-                                <Link to="/about" className="text-blue-400 hover:underline">About Us</Link>
+                                <Link to="/about" className="text-lime-300 hover:underline">About Us</Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-blue-400 hover:underline">Services</Link>
+                                <Link to="/services" className="text-lime-300 hover:underline">Services</Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="text-blue-400 hover:underline">Contact</Link>
+                                <Link to="/contact" className="text-lime-300 hover:underline">Contact</Link>
                             </li>
                         </ul>
                     </div>
@@ -34,13 +34,13 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-4">Social Media</h4>
                         <ul className="space-y-2">
                             <li>
-                                <a href="#" className="text-blue-400 hover:underline">Facebook</a>
+                                <a href="#" className="text-lime-300 hover:underline">Facebook</a>
                             </li>
                             <li>
-                                <a href="#" className="text-blue-400 hover:underline">Twitter</a>
+                                <a href="#" className="text-lime-300 hover:underline">Twitter</a>
                             </li>
                             <li>
-                                <a href="#" className="text-blue-400 hover:underline">Instagram</a>
+                                <a href="#" className="text-lime-300 hover:underline">Instagram</a>
                             </li>
                         </ul>
                     </div>

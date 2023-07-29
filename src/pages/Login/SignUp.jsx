@@ -14,6 +14,15 @@ const SignUp = () => {
 
     const onSubmit = data => {
 
+        if (data.password !== data.confirmPassword) {
+            return alert('Please make sure your passwords match');
+        }
+        console.log(data);
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
     };
 
 
