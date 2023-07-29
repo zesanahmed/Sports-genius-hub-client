@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
@@ -23,6 +27,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 Swal.fire('Login Successful')
+                navigate(from, { replace: true });
             })
 
     };
