@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
+
+
 
     const handleLogOut = () => {
         logOut()
@@ -48,6 +51,12 @@ const Navbar = () => {
                         <Link to='/login'> <a className="btn btn-sm bg-lime-600 font-bold text-white md:ms-10 
                  mr-4">Login</a></Link>
                     </>
+                }
+                {user ?
+                    <>
+                        <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} className="h-10 w-10 md:ml-4 md:mr-4 rounded-full" src={user.photoURL} alt="User Profile" />
+                        <p><Tooltip id="my-tooltip" /></p>
+                    </> : <></>
                 }
             </div>
         </div >
