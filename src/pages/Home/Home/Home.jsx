@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import TopSlider from "../TopSlider/TopSlider";
+import PopularInstructors from "../PopularInstructors/PopularInstructors";
 
 
 const Home = () => {
@@ -8,7 +9,8 @@ const Home = () => {
             <Helmet>
                 <title>Sports | Home</title>
             </Helmet>
-            <TopSlider></TopSlider>
+            <TopSlider />
+            <PopularInstructors />
         </div>
     );
 };

@@ -1,7 +1,7 @@
 [
     {
         "name": "John Doe",
-        "img": "https://example.com/john-doe.jpg",
+        "img": "https://img.freepik.com/premium-psd/man-wearing-waistcoat_1368-27965.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph",
         "email": "john.doe@example.com",
         "numberOfClasses": 5,
         "classesTaken": [
@@ -11,7 +11,7 @@
     },
     {
         "name": "Jane Smith",
-        "img": "https://example.com/jane-smith.jpg",
+        "img": "https://img.freepik.com/premium-photo/ambition-gets-you-far-i-can-testify-that-portrait-confident-mature-businessman-standing-office-with-his-colleagues-background_590464-47752.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph",
         "email": "jane.smith@example.com",
         "numberOfClasses": 8,
         "classesTaken": [
@@ -22,7 +22,7 @@
     },
     {
         "name": "Mike Johnson",
-        "img": "https://example.com/mike-johnson.jpg",
+        "img": "https://img.freepik.com/free-photo/full-body-studio-portrait-black-basketball-player-playing-with-ball_613910-8678.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "mike.johnson@example.com",
         "numberOfClasses": 3,
         "classesTaken": [
@@ -32,7 +32,7 @@
     },
     {
         "name": "Emily Brown",
-        "img": "https://example.com/emily-brown.jpg",
+        "img": "https://img.freepik.com/premium-photo/man-is-running-white-tank-top-shorts-that-say-i-m-runner_873925-16268.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "emily.brown@example.com",
         "numberOfClasses": 6,
         "classesTaken": [
@@ -42,7 +42,7 @@
     },
     {
         "name": "David Lee",
-        "img": "https://example.com/david-lee.jpg",
+        "img": "https://img.freepik.com/free-photo/man-with-skateboard-jumping_1368-1232.jpg?w=740&t=st=1690816415~exp=1690817015~hmac=4dbca600e116b74e1dd01f34195117b248121f0f25a6629e2e7ee7cbf9198cfe",
         "email": "david.lee@example.com",
         "numberOfClasses": 4,
         "classesTaken": [
@@ -52,7 +52,7 @@
     },
     {
         "name": "Sarah Miller",
-        "img": "https://example.com/sarah-miller.jpg",
+        "img": "https://img.freepik.com/free-photo/sporty-athletic-male-is-warming-up-stretching-outdoors-modern-building-background_613910-9071.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "sarah.miller@example.com",
         "numberOfClasses": 7,
         "classesTaken": [
@@ -63,7 +63,7 @@
     },
     {
         "name": "Kevin Wilson",
-        "img": "https://example.com/kevin-wilson.jpg",
+        "img": "https://img.freepik.com/free-photo/portrait-young-handsome-sportsman-holds-hand-chin-dark-background_613910-19200.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "kevin.wilson@example.com",
         "numberOfClasses": 9,
         "classesTaken": [
@@ -73,7 +73,7 @@
     },
     {
         "name": "Linda Taylor",
-        "img": "https://example.com/linda-taylor.jpg",
+        "img": "https://img.freepik.com/free-photo/healthy-fresh-strong-confident-gesturing_1368-2652.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "linda.taylor@example.com",
         "numberOfClasses": 2,
         "classesTaken": [
@@ -82,7 +82,7 @@
     },
     {
         "name": "Ryan Anderson",
-        "img": "https://example.com/ryan-anderson.jpg",
+        "img": "https://img.freepik.com/free-photo/cheerful-young-sports-man-using-mobile-phone-listening-music_171337-8215.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "ryan.anderson@example.com",
         "numberOfClasses": 4,
         "classesTaken": [
@@ -92,7 +92,7 @@
     },
     {
         "name": "Amanda Clark",
-        "img": "https://example.com/amanda-clark.jpg",
+        "img": "https://img.freepik.com/free-photo/young-football-soccer-player-training-isolated-black-wall_155003-37507.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
         "email": "amanda.clark@example.com",
         "numberOfClasses": 5,
         "classesTaken": [

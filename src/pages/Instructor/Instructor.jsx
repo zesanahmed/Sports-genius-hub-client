@@ -8,9 +8,11 @@ const Instructor = () => {
         <div className="pt-20">
             <h2>Instructors</h2>
             {
-                instructors.map(instructor => <h2
+                instructors.map(instructor => <div
                     key={instructor.name}
-                >{instructor.name}</h2>)
+                ><p>{instructor.name}</p>
+                    <img src={instructor.img}></img>
+                </div>)
             }
         </div>
     );
