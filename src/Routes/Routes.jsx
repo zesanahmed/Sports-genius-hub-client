@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/Login/SignUp";
 import Instructor from "../pages/Instructor/Instructor";
 import PrivateRoute from "./PrivateRoute";
+import ApprovedClasses from "../pages/ApprovedClasses/ApprovedClasses";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/instructors',
                 element: <PrivateRoute><Instructor></Instructor></PrivateRoute>
+            },
+            {
+                path: '/classes',
+                element: <ApprovedClasses></ApprovedClasses>
             }
         ]
     },

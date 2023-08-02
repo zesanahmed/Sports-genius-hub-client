@@ -1,0 +1,32 @@
+[
+    {
+        "classId": 12345,
+        "className": "Yoga",
+        "classImage": "https://img.freepik.com/premium-photo/close-up-yoga-man-sitting-lotus-asana_35752-1741.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
+        "instructorName": "John Doe",
+        "instructorEmail": "john.doe@example.com",
+        "availableSeats": 20,
+        "price": 25.99,
+        "status": "approved"
+    },
+    {
+        "classId": 67890,
+        "className": "Pilates",
+        "classImage": "https://img.freepik.com/free-photo/group-people-performing-stretching-exercise_1170-227.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=ais",
+        "instructorName": "Jane Smith",
+        "instructorEmail": "jane.smith@example.com",
+        "availableSeats": 15,
+        "price": 19.99,
+        "status": "approved"
+    },
+    {
+        "classId": 98765,
+        "className": "Zumba",
+        "classImage": "https://img.freepik.com/free-photo/football-stadium-night-generative-ai_260559-480.jpg?size=626&ext=jpg&ga=GA1.2.1189830713.1677247708&semt=sph",
+        "instructorName": "Mike Johnson",
+        "instructorEmail": "mike.johnson@example.com",
+        "availableSeats": 25,
+        "price": 21.99,
+        "status": "approved"
+    }
+]

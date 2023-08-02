@@ -17,6 +17,7 @@ const Navbar = () => {
     const NavRoutes = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
+        <li><Link to='/classes'>Classes</Link></li>
         <li><Link>Dashboard</Link></li>
     </>
 
@@ -37,7 +38,7 @@ const Navbar = () => {
                         <span className="md:text-4xl font-bold"> Genius</span> <span className="text-base pt-5">Hub</span></div>
                 </Link>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-center">
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal  text-lg font-bold px-1">
                         {NavRoutes}
