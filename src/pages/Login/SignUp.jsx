@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
@@ -11,6 +11,9 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { createUser, updateUserProfile, googleSignInWithPopup, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
@@ -28,16 +31,30 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        logOut();
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User created successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/login');
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                                if (data.insertedId) {
+                                    // logOut();
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/');
+                                }
+                            })
                     })
             })
             .catch(error => {
@@ -57,23 +74,18 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'User created successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                navigate('/');
-            })
-            .catch(error => {
-                console.log(error.message);
-                Swal.fire({
-                    title: 'Error!',
-                    text: error.code,
-                    icon: 'error',
-                    confirmButtonText: 'Okay'
+                const saveUser = { name: user.displayName, email: user.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
                 })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
             })
     }
 

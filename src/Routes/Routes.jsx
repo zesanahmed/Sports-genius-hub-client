@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import ApprovedClasses from "../pages/ApprovedClasses/ApprovedClasses";
 import Dashboard from "../Layout/Dashboard";
 import MySelectedClasses from "../pages/Dashboard/MySelectedClasses";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -42,13 +43,17 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'mySelectedClass',
                 element: <MySelectedClasses></MySelectedClasses>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ]);
 

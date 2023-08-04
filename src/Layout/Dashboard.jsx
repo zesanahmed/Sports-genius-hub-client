@@ -22,6 +22,7 @@ const Dashboard = () => {
                     <li><NavLink to='/dashboard/myEnrolledClass'><AiFillCarryOut />My Enrolled Classes</NavLink></li>
                     <div className="divider"></div>
                     <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
+                    <li><NavLink to='/classes'><FaHome></FaHome>Classes</NavLink></li>
                 </ul>
 
             </div>

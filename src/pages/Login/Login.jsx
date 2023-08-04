@@ -44,14 +44,18 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'User created successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                navigate('/');
+                const saveUser = { name: user.displayName, email: user.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
             })
             .catch(error => {
                 console.log(error.message);
@@ -62,6 +66,7 @@ const Login = () => {
                     confirmButtonText: 'Okay'
                 })
             })
+
     }
 
     return (
