@@ -28,7 +28,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Swal.fire('Login Successful')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate(from, { replace: true });
             })
     };

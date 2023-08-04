@@ -1,16 +1,20 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
-    const { user, logOut, loading } = useContext(AuthContext);
-
+    const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
+    const navigate = useNavigate();
 
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                navigate('/');
+            })
             .catch(error => console.log(error))
     }
 
@@ -18,7 +22,9 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
-        <li><Link>Dashboard</Link></li>
+        <li><Link to='/dashboard/mySelectedClass'>
+            Dashboard
+        </Link></li>
     </>
 
     return (
