@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 
 const ManageClasses = () => {
@@ -6,6 +7,47 @@ const ManageClasses = () => {
         const res = await fetch('http://localhost:5000/classes')
         return res.json();
     })
+
+    const handleApprove = id => {
+        fetch(`http://localhost:5000/classes/approve/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Approved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+    const handleDeny = id => {
+        fetch(`http://localhost:5000/classes/denied/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Denied',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
     return (
         <div className="w-full">
             <h2 className="text-3xl font-semibold ms-4 mb-6">Total Classes: {classes.length}</h2>
@@ -50,8 +92,8 @@ const ManageClasses = () => {
                                 <td>${cls.price}</td>
                                 <td>{cls.status}</td>
                                 <td className="gap-1">
-                                    <button className="btn btn-success btn-xs">Approve</button>
-                                    <button className="btn btn-error btn-xs">Deny</button>
+                                    <button onClick={() => handleApprove(cls._id)} className="btn btn-success btn-xs">Approve</button>
+                                    <button onClick={() => handleDeny(cls._id)} className="btn btn-error btn-xs">Deny</button>
                                     <button className="btn btn-info btn-xs">Feedback</button>
                                 </td>
                             </tr>)

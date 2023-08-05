@@ -47,7 +47,7 @@ const AddClass = () => {
         <div className="w-full">
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className="text-center lg:text-left">
+                    <div className="text-center lg:text-left w-1/3">
                         <h1 className="text-5xl font-bold">Add Class</h1>
                         <p className="py-6">Add a New Class: Create an Exciting Journey. Together, we can create a dynamic learning community where knowledge knows no bounds.</p>
                     </div>

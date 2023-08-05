@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser, updateUserProfile, googleSignInWithPopup, logOut } = useContext(AuthContext);
+    const { createUser, updateUserProfile, googleSignInWithPopup } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -31,7 +31,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email }
+                        const saveUser = { name: data.name, email: data.email, role: "user" }
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {

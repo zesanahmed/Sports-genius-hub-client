@@ -7,8 +7,8 @@ const Dashboard = () => {
     const [cart] = useCart();
 
     // TODO: 
-    const isAdmin = false;
-    const isInstructor = true;
+    const isAdmin = true;
+    const isInstructor = false;
     const isUser = false;
 
     return (
