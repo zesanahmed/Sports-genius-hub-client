@@ -2,14 +2,28 @@ import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import { FaHome, FaShoppingCart, FaUserCog, FaUserFriends } from 'react-icons/fa';
 import { AiFillAppstore, AiFillCarryOut, AiFillFileAdd, AiOutlineIdcard } from "react-icons/ai";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import useUsers from "../hooks/useUser";
 
 const Dashboard = () => {
     const [cart] = useCart();
+    const [users] = useUsers();
+    const [role, setRole] = useState(null);
 
-    // TODO: 
-    const isAdmin = true;
-    const isInstructor = false;
-    const isUser = false;
+    const { user } = useContext(AuthContext);
+    const userEmail = user.email;
+
+
+
+    useEffect(() => {
+        const foundUser = users.find(user => user.email === userEmail);
+        if (foundUser) {
+            console.log(foundUser.role);
+            setRole(foundUser.role)
+        }
+    }, [users, userEmail])
+
 
     return (
         <div className="drawer lg:drawer-open">
@@ -25,16 +39,17 @@ const Dashboard = () => {
 
 
                     {
-                        isAdmin &&
+                        role === 'admin' &&
                         <>
                             <li><NavLink to='/dashboard/manageClasses'><FaUserCog /> Manage Classes</NavLink></li>
                             <li><NavLink to='/dashboard/manageUsers'><FaUserFriends />Manage Users</NavLink></li>
+                            <li>{users.length}</li>
                         </>
                     }
 
 
                     {
-                        isInstructor && <>
+                        role === 'instructor' && <>
                             <li><NavLink to='/dashboard/addClass'><AiFillFileAdd /> Add a class</NavLink></li>
 
                             <li><NavLink to='/dashboard/myClasses'><AiFillAppstore />My Classes</NavLink></li>
@@ -43,7 +58,7 @@ const Dashboard = () => {
 
 
                     {
-                        isUser && <>
+                        role === 'user' && <>
 
                             <li><NavLink to='/dashboard/mySelectedClass'><FaShoppingCart /> My Selected Classes  <div className="badge badge-secondary">+{cart?.length || 0}</div>
                             </NavLink></li>

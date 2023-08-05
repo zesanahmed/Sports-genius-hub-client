@@ -8,6 +8,7 @@ const ManageClasses = () => {
         return res.json();
     })
 
+
     const handleApprove = id => {
         fetch(`http://localhost:5000/classes/approve/${id}`, {
             method: 'PATCH'
@@ -53,7 +54,6 @@ const ManageClasses = () => {
             <h2 className="text-3xl font-semibold ms-4 mb-6">Total Classes: {classes.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
-                    {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
