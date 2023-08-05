@@ -7,7 +7,7 @@ const useInstructor = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/instructors')
+        fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/instructors')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data);

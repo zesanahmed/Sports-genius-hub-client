@@ -7,7 +7,7 @@ const useUsers = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data);

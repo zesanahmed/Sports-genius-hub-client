@@ -4,13 +4,13 @@ import Swal from "sweetalert2";
 
 const ManageClasses = () => {
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-        const res = await fetch('http://localhost:5000/classes')
+        const res = await fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/classes')
         return res.json();
     })
 
 
     const handleApprove = id => {
-        fetch(`http://localhost:5000/classes/approve/${id}`, {
+        fetch(`https://sports-genius-hub-server-zesanahmed.vercel.app/classes/approve/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -30,7 +30,7 @@ const ManageClasses = () => {
     }
 
     const handleDeny = id => {
-        fetch(`http://localhost:5000/classes/denied/${id}`, {
+        fetch(`https://sports-genius-hub-server-zesanahmed.vercel.app/classes/denied/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

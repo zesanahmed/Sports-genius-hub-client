@@ -7,7 +7,7 @@ const useClasses = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setClasses(data);

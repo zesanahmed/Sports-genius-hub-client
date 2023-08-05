@@ -23,7 +23,7 @@ const AddClass = () => {
         console.log(cls);
 
 
-        fetch("http://localhost:5000/classes", {
+        fetch("https://sports-genius-hub-server-zesanahmed.vercel.app/classes", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(cls)

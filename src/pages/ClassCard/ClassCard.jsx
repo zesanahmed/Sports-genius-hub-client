@@ -18,7 +18,7 @@ const ClassCard = ({ cls }) => {
         console.log('selected class', cls);
         if (user && user.email) {
             const classCart = { classId: _id, email: user.email, classImage, className, instructorName, instructorEmail, price }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

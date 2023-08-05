@@ -32,7 +32,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email, role: "user" }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -75,7 +75,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 const saveUser = { name: user.displayName, email: user.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

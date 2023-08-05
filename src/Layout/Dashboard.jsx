@@ -43,7 +43,6 @@ const Dashboard = () => {
                         <>
                             <li><NavLink to='/dashboard/manageClasses'><FaUserCog /> Manage Classes</NavLink></li>
                             <li><NavLink to='/dashboard/manageUsers'><FaUserFriends />Manage Users</NavLink></li>
-                            <li>{users.length}</li>
                         </>
                     }
 
