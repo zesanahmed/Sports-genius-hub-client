@@ -1,6 +1,6 @@
 import { FaRegTrashAlt } from "react-icons/fa";
-import useCart from "../../hooks/useCart";
 import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 
 const MySelectedClasses = () => {
