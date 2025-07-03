@@ -49,9 +49,11 @@ const ManageClasses = () => {
             })
     }
 
+
+
     return (
         <div className="w-full">
-            <h2 className="text-3xl font-semibold ms-4 mb-6">Total Classes: {classes.length}</h2>
+            <h2 className="text-3xl font-semibold ms-4 mt-6 mb-3">Total Classes: {classes.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead>
@@ -94,13 +96,11 @@ const ManageClasses = () => {
                                 <td className="gap-1">
                                     <button onClick={() => handleApprove(cls._id)} className="btn btn-success btn-xs">Approve</button>
                                     <button onClick={() => handleDeny(cls._id)} className="btn btn-error btn-xs">Deny</button>
-                                    <button className="btn btn-info btn-xs">Feedback</button>
+                                    <button className="btn btn-xs btn-neutral">Feedback</button>
                                 </td>
                             </tr>)
                         }
-
                     </tbody>
-
                 </table>
             </div>
         </div>

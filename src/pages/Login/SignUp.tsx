@@ -31,7 +31,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email, role: "user" }
+                        const saveUser = { name: data.name, email: data.email, role: "student" }
                         fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/users', {
                             method: 'POST',
                             headers: {
@@ -74,7 +74,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                const saveUser = { name: user.displayName, email: user.email }
+                const saveUser = { name: user.displayName, email: user.email, role: "student" }
                 fetch('https://sports-genius-hub-server-zesanahmed.vercel.app/users', {
                     method: 'POST',
                     headers: {
