@@ -10,7 +10,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../Firebase/firebase.config";
+import app from "../config/firebase.config";
 
 // 👉 Type definition for the context
 interface AuthContextType {

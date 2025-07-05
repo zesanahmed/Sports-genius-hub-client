@@ -1,90 +1,94 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-import Main from "../Layout/Main";
-import Home from "../pages/Home/Home/Home";
-import Login from "../pages/Login/Login";
-import SignUp from "../pages/Login/SignUp";
-import Instructor from "../pages/Instructor/Instructor";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "../layout/Main";
+import Home from "../pages/Home/Home";
+import Login from "../pages/Auth/Login";
+import SignUp from "../pages/Auth/SignUp";
+import Instructor from "../pages/Instructors/Instructor";
+import ApprovedClasses from "../pages/Classes/ApprovedClasses";
+import Dashboard from "../layout/Dashboard";
+import ErrorPage from "../pages/Error/ErrorPage";
+import MySelectedClasses from "../pages/Dashboard/User/MySelectedClasses";
+import AddClass from "../pages/Dashboard/Instructor/AddClass";
+import MyClasses from "../pages/Dashboard/Instructor/MyClasses";
+import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
+import MyEnrolledClasses from "../pages/Dashboard/User/MyEnrolledClasses";
+import UpdateClass from "../pages/Dashboard/Instructor/UpdateClass";
 import PrivateRoute from "./PrivateRoute";
-import ApprovedClasses from "../pages/ApprovedClasses/ApprovedClasses";
-import Dashboard from "../Layout/Dashboard";
-import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import MySelectedClasses from "../pages/Dashboard/UserDashboard/MySelectedClasses";
-import AddClass from "../pages/Dashboard/InstructorDashboard/AddClass";
-import MyClasses from "../pages/Dashboard/InstructorDashboard/MyClasses";
-import ManageClasses from "../pages/Dashboard/AdminDashboard/ManageClasses";
-import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
-import MyEnrolledClasses from "../pages/Dashboard/UserDashboard/MyEnrolledClasses";
-import UpdateClass from "../pages/Dashboard/InstructorDashboard/UpdateClass";
-
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path: '/signUp',
-                element: <SignUp></SignUp>
-            },
-            {
-                path: '/instructors',
-                element: <PrivateRoute><Instructor></Instructor></PrivateRoute>
-            },
-            {
-                path: '/classes',
-                element: <ApprovedClasses></ApprovedClasses>
-            }
-        ]
-    },
-    {
-        path: 'dashboard',
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-        children: [
-            {
-                path: 'mySelectedClass',
-                element: <MySelectedClasses></MySelectedClasses>
-            },
-            {
-                path: 'myEnrolledClasses',
-                element: <MyEnrolledClasses></MyEnrolledClasses>
-            },
-            {
-                path: 'addClass',
-                element: <AddClass></AddClass>
-            },
-            {
-                path: 'myClasses',
-                element: <MyClasses></MyClasses>
-            },
-            {
-                path: 'manageClasses',
-                element: <ManageClasses></ManageClasses>
-            },
-            {
-                path: 'manageUsers',
-                element: <ManageUsers></ManageUsers>
-            },
-            {
-                path: 'updateClass',
-                element: <UpdateClass></UpdateClass>
-            }
-        ]
-    },
-    {
-        path: '*',
-        element: <ErrorPage></ErrorPage>
-    }
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/instructors",
+        element: (
+          <PrivateRoute>
+            <Instructor></Instructor>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/classes",
+        element: <ApprovedClasses></ApprovedClasses>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "mySelectedClass",
+        element: <MySelectedClasses></MySelectedClasses>,
+      },
+      {
+        path: "myEnrolledClasses",
+        element: <MyEnrolledClasses></MyEnrolledClasses>,
+      },
+      {
+        path: "addClass",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "myClasses",
+        element: <MyClasses></MyClasses>,
+      },
+      {
+        path: "manageClasses",
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "manageUsers",
+        element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "updateClass",
+        element: <UpdateClass></UpdateClass>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+  },
 ]);
 
 export default router;
