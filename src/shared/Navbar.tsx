@@ -78,16 +78,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full shadow-md bg-gray-900 text-white sticky top-0 z-50">
-      <div className="flex flex-row md:flex-row justify-between items-center px-6 py-2 max-w-screen-xl mx-auto transition-all duration-300">
+    <nav className="w-full shadow-md bg-slate-900 text-white sticky top-0 z-50">
+      <div className="flex flex-row md:flex-row justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto transition-all duration-300">
         <motion.div
           className="flex items-center space-x-2"
           initial={false}
           animate={{ gap: isScrolled ? 8 : 16 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="flex flex-col items-center">
-            <div className="text-2xl md:text-3xl">🏏</div>
+          <div className="flex items-center">
+            {
+              <Link to="/">
+                <div
+                  className={`text-2xl ${
+                    isScrolled ? "md:text-4xl" : "md:text-5xl"
+                  }`}
+                >
+                  🏏
+                </div>
+              </Link>
+            }
             <AnimatePresence>
               {!isScrolled && (
                 <Link to="/" className="flex flex-col items-center">
@@ -169,7 +179,7 @@ const Navbar = () => {
                     className={`cursor-pointer pb-1 ${
                       isDropdownActive(link.dropdown)
                         ? "border-b-2 border-blue-500"
-                        : "hover:text-blue-500"
+                        : "hover:text-lime-300"
                     }`}
                   >
                     {link.name}

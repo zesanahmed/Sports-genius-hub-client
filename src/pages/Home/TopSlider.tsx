@@ -56,7 +56,7 @@ const TopSlider = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-sm md:text-xl text-lime-200"
+            className="text-sm md:text-xl text-white"
           >
             Premium cricket and fitness club
           </motion.p>

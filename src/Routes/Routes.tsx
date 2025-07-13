@@ -5,7 +5,7 @@ import Login from "../pages/Auth/Login";
 import SignUp from "../pages/Auth/SignUp";
 import Instructor from "../pages/Instructors/Instructor";
 import ApprovedClasses from "../pages/Classes/ApprovedClasses";
-import Dashboard from "../layout/Dashboard";
+import UserDashboard from "../layout/UserDashboard";
 import ErrorPage from "../pages/Error/ErrorPage";
 import MySelectedClasses from "../pages/Dashboard/User/MySelectedClasses";
 import AddClass from "../pages/Dashboard/Instructor/AddClass";
@@ -15,6 +15,9 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import MyEnrolledClasses from "../pages/Dashboard/User/MyEnrolledClasses";
 import UpdateClass from "../pages/Dashboard/Instructor/UpdateClass";
 import PrivateRoute from "./PrivateRoute";
+import List from "../pages/Blog/List";
+import Standard from "../pages/Blog/Standard";
+import Masonry from "../pages/Blog/Masonry";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,18 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
+        path: "/blog/list",
+        element: <List />,
+      },
+      {
+        path: "/blog/standard",
+        element: <Standard />,
+      },
+      {
+        path: "/blog/masonry",
+        element: <Masonry />,
+      },
+      {
         path: "/instructors",
         element: (
           <PrivateRoute>
@@ -51,7 +66,7 @@ const router = createBrowserRouter([
     path: "dashboard",
     element: (
       <PrivateRoute>
-        <Dashboard></Dashboard>
+        <UserDashboard></UserDashboard>
       </PrivateRoute>
     ),
     children: [
