@@ -20,7 +20,7 @@ const Navbar = () => {
     {
       name: "Home",
       dropdown: [
-        { name: "Cricket Club", path: "/club" },
+        { name: "Cricket Club", path: "club/cricket" },
         { name: "Coaching", path: "/coaching" },
         { name: "Cricket Equipment Store", path: "/store" },
       ],

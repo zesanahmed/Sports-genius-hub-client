@@ -18,6 +18,7 @@ import PrivateRoute from "./PrivateRoute";
 import List from "../pages/Blog/List";
 import Standard from "../pages/Blog/Standard";
 import Masonry from "../pages/Blog/Masonry";
+import CricketClub from "../pages/club/CricketClub";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/blog/masonry",
         element: <Masonry />,
+      },
+      {
+        path: "club/cricket",
+        element: <CricketClub />,
       },
       {
         path: "/instructors",
