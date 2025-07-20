@@ -78,7 +78,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full shadow-md bg-slate-900 text-white sticky top-0 z-50">
+    <nav className="w-full shadow-md bg-base-content text-white sticky top-0 z-50">
       <div className="flex flex-row md:flex-row justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto transition-all duration-300">
         <motion.div
           className="flex items-center space-x-2"

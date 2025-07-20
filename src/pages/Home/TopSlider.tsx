@@ -44,7 +44,7 @@ const TopSlider = () => {
           <div
             className="w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: `linear-gradient(to right, rgba(163, 230, 53, 0.4), rgba(0,0,0,0) 33%), url(${slide.image})`,
+              backgroundImage: `linear-gradient(to right, rgba(175, 214, 57, 0.3), rgba(0,0,0,0) 33%), url(${slide.image})`,
             }}
           ></div>
         </motion.div>

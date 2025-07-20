@@ -6,7 +6,7 @@ const WelcomeClub = () => {
           className="mx-auto md:w-5/6 md:h-screen"
           src="https://i.pinimg.com/1200x/33/96/6f/33966f6bc27bc59fe9644dfcf17fac95.jpg"
         />
-        <p className="text-white text-4xl font-semibold bg-lime-950 text-center md:py-12 md:px-12 md:absolute bottom-0 right-5">
+        <p className="text-white text-4xl font-semibold gradient-primary text-center md:py-12 md:px-12 md:absolute bottom-0 right-5">
           OUR COURTS MAKE <br /> THE WORLDS TOP 10
         </p>
       </div>
@@ -25,9 +25,8 @@ const WelcomeClub = () => {
           Come, be a part of our family, and lets create unforgettable memories
           together at our club!
         </p>
-        <button className="btn text-white text-md font-sans px-14 py-7 rounded-none  bg-lime-400">
-          ABOUT US
-        </button>
+
+        <button className="btn-primary">ABOUT US</button>
       </div>
     </div>
   );

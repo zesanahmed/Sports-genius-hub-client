@@ -9,3 +9,12 @@
 .drawer-side a.active {
   color: white;
 }
+
+@layer components {
+  .btn-primary {
+    @apply text-white font-semibold bg-[rgb(175,214,57)] text-sm font-sans px-14 py-4 rounded-none border-none;
+  }
+  .gradient-primary {
+    @apply bg-gradient-to-r from-lime-950 via-base-content to-base-content;
+  }
+}
