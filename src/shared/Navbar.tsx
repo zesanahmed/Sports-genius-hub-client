@@ -70,7 +70,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY >= window.innerHeight);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -78,13 +78,19 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full shadow-md bg-base-content text-white sticky top-0 z-50">
+    <motion.nav
+      className={`w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "sticky top-0 bg-base-content text-white shadow-md"
+          : "absolute top-0 left-0 text-white"
+      }`}
+    >
       <div className="flex flex-row md:flex-row justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto transition-all duration-300">
         <motion.div
           className="flex items-center space-x-2"
           initial={false}
           animate={{ gap: isScrolled ? 8 : 16 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="flex items-center">
             {
@@ -112,7 +118,7 @@ const Navbar = () => {
                       <span className="text-sm md:text-2xl font-bold text-gray-500">
                         Genius
                       </span>
-                      <h1 className="text-sm md:text-xl font-bold bg-lime-500 text-white px-1">
+                      <h1 className="text-sm md:text-xl font-bold primary-bg text-white px-1">
                         Hub
                       </h1>
                     </div>
@@ -290,7 +296,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

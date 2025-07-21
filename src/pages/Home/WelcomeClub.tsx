@@ -1,6 +1,6 @@
 const WelcomeClub = () => {
   return (
-    <div className="md:flex gap-8 my-20 w-full">
+    <div id="below-banner" className="md:flex gap-8 my-20 w-full">
       <div className="relative md:ml-8 md:w-1/2">
         <img
           className="mx-auto md:w-5/6 md:h-screen"

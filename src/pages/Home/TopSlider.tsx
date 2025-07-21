@@ -4,7 +4,7 @@ import { FaArrowDown } from "react-icons/fa";
 import banner1 from "../../assets/banner/banner1.jpeg";
 import banner2 from "../../assets/banner/banner2.jpeg";
 import banner3 from "../../assets/banner/banner3.jpeg";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const slides = [
   {
@@ -13,7 +13,7 @@ const slides = [
   },
   {
     image: banner2,
-    headline: "TRAIN TO PLAY LIKE A PRO!",
+    headline: "BUILD SKILLS, LAUGH, AND GROW",
   },
   {
     image: banner3,
@@ -32,7 +32,7 @@ const TopSlider = () => {
   }, []);
 
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden" id="banner">
+    <div className="relative h-[90vh] w-full overflow-hidden" id="banner">
       {slides.map((slide, index) => (
         <motion.div
           key={index}
@@ -41,22 +41,21 @@ const TopSlider = () => {
           transition={{ duration: 1 }}
           className="absolute inset-0 w-full h-full"
         >
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `linear-gradient(to right, rgba(175, 214, 57, 0.3), rgba(0,0,0,0) 33%), url(${slide.image})`,
-            }}
-          ></div>
+          <img
+            src={slide.image}
+            className="w-full bg-cover"
+            alt={slide.headline}
+          />
         </motion.div>
       ))}
 
-      <div className="absolute top-0 left-0 w-full h-full flex items-center">
-        <div className="w-full md:w-1/3 px-8 md:px-16 text-white space-y-6">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="w-full mt-32 md:w-1/3 px-8 md:px-16 text-white space-y-6">
           <motion.p
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-sm md:text-xl text-white"
+            className="text-sm md:text-xl text-white font-sans"
           >
             Premium cricket and fitness club
           </motion.p>
@@ -77,15 +76,15 @@ const TopSlider = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="flex items-center gap-2 cursor-pointer"
           >
-            <Link
+            <ScrollLink
               to="below-banner"
               smooth={true}
               duration={500}
-              className="text-sm md:text-xl border-b border-white hover:text-lime-300"
+              className="text-sm md:text-xl border-b border-white hover-primary-text"
             >
               SCROLL DOWN
-            </Link>
-            <FaArrowDown className="text-lime-300 animate-bounce" />
+            </ScrollLink>
+            <FaArrowDown className="primary-text animate-bounce" />
           </motion.div>
         </div>
       </div>
