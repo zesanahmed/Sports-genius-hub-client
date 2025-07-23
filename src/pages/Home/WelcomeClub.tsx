@@ -1,7 +1,9 @@
+import FadeInSection from "../../shared/FadeInSection";
+
 const WelcomeClub = () => {
   return (
     <div id="below-banner" className="md:flex gap-8 my-20 w-full">
-      <div className="relative md:ml-8 md:w-1/2">
+      <FadeInSection className="relative md:ml-8 md:w-1/2">
         <img
           className="mx-auto md:w-5/6 md:h-screen"
           src="https://i.pinimg.com/1200x/33/96/6f/33966f6bc27bc59fe9644dfcf17fac95.jpg"
@@ -9,7 +11,7 @@ const WelcomeClub = () => {
         <p className="text-white text-4xl font-semibold gradient-primary text-center md:py-12 md:px-12 md:absolute bottom-0 right-5">
           OUR COURTS MAKE <br /> THE WORLDS TOP 10
         </p>
-      </div>
+      </FadeInSection>
       <div className="md:w-1/2 md:px-20 mx-3 md:mx-auto my-auto">
         <p className="text-lg font-semibold mb-3">HELLO!</p>
         <h2 className="text-2xl md:text-5xl font-semibold mb-8">

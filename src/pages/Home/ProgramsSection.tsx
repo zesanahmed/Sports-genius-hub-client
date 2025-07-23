@@ -1,4 +1,8 @@
-import React from "react";
+import FadeInSection from "../../shared/FadeInSection";
+import img1 from "../../assets/programs/Cricket.jpeg";
+import img2 from "../../assets/programs/For-kids.jpeg";
+import img3 from "../../assets/programs/Squash.jpeg";
+import img4 from "../../assets/programs/Private-group.jpeg";
 
 const ProgramsSection = () => {
   return (
@@ -13,7 +17,7 @@ const ProgramsSection = () => {
       </div>
 
       {/* Color Shadow Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-lime-900/60 to-black/90 "></div>
+      <div className="absolute inset-0 gradient-secondary"></div>
 
       {/* Foreground Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20 pb-16">
@@ -25,23 +29,40 @@ const ProgramsSection = () => {
         </h1>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7 mb-8">
+        <FadeInSection className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7 mb-8">
           {[
-            { title: "Tennis Coaching", img: "/assets/tennis.jpg" },
-            { title: "Squash Training", img: "/assets/squash.jpg" },
-            { title: "Group Programs", img: "/assets/group.jpg" },
-            { title: "Group Programs", img: "/assets/group.jpg" },
+            { title: "CRICKET COACHING", img: img1 },
+            { title: "CRICKET FOR KIDS", img: img2 },
+            { title: "SQUASH COACHING", img: img3 },
+            { title: "PRIVATE GROUP", img: img4 },
           ].map((item, idx) => (
-            <div key={idx} className="w-64 h-96 bg-white p-4 shadow-lg">
+            <div key={idx} className="relative group w-64 h-96 overflow-hidden">
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-40 object-cover rounded-md mb-3"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Number from top */}
+              <span className="absolute top-10 left-10 text-white text-2xl font-bold opacity-0 group-hover:opacity-100 translate-y-[-20px] group-hover:translate-y-0 transition-all duration-500">
+                {idx + 1}.
+              </span>
+              {/* Title at bottom */}
+
+              <div className="absolute bottom-2 group-hover:mb-6 left-0 w-full text-center translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                <h3 className="text-white text-2xl font-bold mb-1">
+                  {item.title}
+                </h3>
+
+                {/* Subtitle rising from bottom */}
+                <p className="text-lg text-gray-200 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Learn from the best
+                </p>
+              </div>
             </div>
           ))}
-        </div>
+        </FadeInSection>
 
         {/* Call to Action */}
         <button className="btn-primary">Join Now</button>

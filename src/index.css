@@ -26,4 +26,7 @@
   .gradient-primary {
     @apply bg-gradient-to-r from-lime-950 via-base-content to-base-content;
   }
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-lime-950/60 to-black/90;
+  }
 }
