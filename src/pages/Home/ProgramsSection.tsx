@@ -20,7 +20,7 @@ const ProgramsSection = () => {
       <div className="absolute inset-0 gradient-secondary"></div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20 pb-16">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-24 pb-20">
         <p className="text-white font-bold font-sans uppercase text-sm tracking-widest">
           Explore Our Programs
         </p>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import banner1 from "../../assets/banner/banner1.jpeg";
-import banner2 from "../../assets/banner/banner2.jpeg";
+import banner2 from "../../assets/banner/banner2.jpg";
 import banner3 from "../../assets/banner/banner3.jpeg";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -32,7 +32,7 @@ const TopSlider = () => {
   }, []);
 
   return (
-    <div className="relative h-[90vh] w-full overflow-hidden" id="banner">
+    <div className="relative h-[100vh] w-full overflow-hidden" id="banner">
       {slides.map((slide, index) => (
         <motion.div
           key={index}
@@ -74,7 +74,7 @@ const TopSlider = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer mt-20"
           >
             <ScrollLink
               to="below-banner"
