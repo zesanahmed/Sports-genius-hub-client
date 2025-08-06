@@ -4,8 +4,8 @@ import InfoSection from "./InfoSection";
 import PopularClasses from "./PopularClasses";
 import TopSlider from "./TopSlider";
 import WelcomeClub from "./WelcomeClub";
-import NumberSection from "./NumberSection";
 import ProgramsSection from "./ProgramsSection";
+import CounterSection from "./CounterSection";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
       </Helmet>
       <TopSlider />
       <WelcomeClub />
-      <NumberSection />
+      <CounterSection />
       <ProgramsSection />
       <PopularClasses />
       <PopularInstructors />

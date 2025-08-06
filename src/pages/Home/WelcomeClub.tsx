@@ -2,7 +2,7 @@ import FadeInSection from "../../shared/FadeInSection";
 
 const WelcomeClub = () => {
   return (
-    <div id="below-banner" className="md:flex gap-8 my-20 w-full">
+    <div id="below-banner" className="md:flex gap-8 mt-20 w-full">
       <FadeInSection className="relative md:ml-8 md:w-1/2">
         <img
           className="mx-auto md:w-5/6 md:h-screen"

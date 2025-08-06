@@ -6,7 +6,7 @@ import img4 from "../../assets/programs/Private-group.jpeg";
 
 const ProgramsSection = () => {
   return (
-    <section className="relative text-white">
+    <section className="relative text-white mt-20">
       {/* Background Image */}
       <div className="absolute inset-0 ">
         <img
