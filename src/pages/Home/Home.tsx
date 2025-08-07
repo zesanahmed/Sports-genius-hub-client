@@ -6,6 +6,7 @@ import TopSlider from "./TopSlider";
 import WelcomeClub from "./WelcomeClub";
 import ProgramsSection from "./ProgramsSection";
 import CounterSection from "./CounterSection";
+import PopularProducts from "./PopularProducts";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <WelcomeClub />
       <CounterSection />
       <ProgramsSection />
+      <PopularProducts />
       <PopularClasses />
       <PopularInstructors />
       <InfoSection />

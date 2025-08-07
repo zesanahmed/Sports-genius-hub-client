@@ -21,11 +21,11 @@ const ProgramsSection = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-24 pb-20">
-        <p className="text-white font-bold font-sans uppercase text-sm tracking-widest">
+        <p className="text-white font-bold font-sans uppercase text-sm tracking-widest mb-4">
           Explore Our Programs
         </p>
         <h1 className="text-4xl md:text-6xl font-semibold mb-7">
-          Find the one for you
+          FIND THE ONE FOR YOU
         </h1>
 
         {/* Cards */}
