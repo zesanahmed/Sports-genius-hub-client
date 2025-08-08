@@ -7,6 +7,7 @@ import WelcomeClub from "./WelcomeClub";
 import ProgramsSection from "./ProgramsSection";
 import CounterSection from "./CounterSection";
 import PopularProducts from "./PopularProducts";
+import ClubMembership from "./ClubMembership";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <CounterSection />
       <ProgramsSection />
       <PopularProducts />
+      <ClubMembership />
       <PopularClasses />
       <PopularInstructors />
       <InfoSection />

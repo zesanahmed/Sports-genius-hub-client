@@ -30,7 +30,7 @@ const PopularProducts = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         <div className="text-center mb-8">
           <p className="text-gray-600 text-xl font-semibold font-sans mt-2">
@@ -42,13 +42,13 @@ const PopularProducts = () => {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        {products.slice(0, 4).map((product, i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        {products.slice(0, 4).map((product) => (
           <motion.div
             key={product.id}
             initial={{ opacity: 0, y: 40 }}
             animate={row1InViewTriggered ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
             <ProductCard product={product} />
           </motion.div>
@@ -69,6 +69,9 @@ const PopularProducts = () => {
             <ProductCard product={product} />
           </motion.div>
         ))}
+      </div>
+      <div className="flex justify-center mt-10">
+        <button className="btn-primary">VIEW ALL PRODUCTS</button>
       </div>
     </div>
   );
