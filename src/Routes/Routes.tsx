@@ -19,6 +19,7 @@ import List from "../pages/Blog/List";
 import Standard from "../pages/Blog/Standard";
 import Masonry from "../pages/Blog/Masonry";
 import CricketClub from "../pages/club/CricketClub";
+import Membership from "../pages/Membership/Membership";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/classes",
         element: <ApprovedClasses></ApprovedClasses>,
+      },
+      {
+        path: "/membership",
+        element: <Membership />,
       },
     ],
   },

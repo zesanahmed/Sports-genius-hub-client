@@ -2,8 +2,26 @@ import bgImg from "../../assets/membership/ball-bg.jpg";
 import MembershipCard from "../../components/MembershipCard";
 
 const programs = [
-  { title: "CRICKET COACHING", img: "/images/coaching.jpg" },
-  { title: "CRICKET FOR KIDS", img: "/images/kids.jpg" },
+  {
+    title: "Gold Pack",
+    subtitle: "Premium Membership",
+    price: "99",
+    period: "Mo",
+    features: ["Daily sessions", "Full gear support", "Priority club access"],
+    buttonText: "GET NOW",
+  },
+  {
+    title: "Silver Pack",
+    subtitle: "Standard Membership",
+    price: "49",
+    period: "Mo",
+    features: [
+      "Regular sessions",
+      "Group activities",
+      "Basic coaching support",
+    ],
+    buttonText: "GET NOW",
+  },
 ];
 
 const ClubMembership = () => {
@@ -30,8 +48,11 @@ const ClubMembership = () => {
               <MembershipCard
                 key={idx}
                 title={item.title}
-                img={item.img}
-                index={idx}
+                subtitle={item.subtitle}
+                price={item.price}
+                period={item.period}
+                features={item.features}
+                buttonText={item.buttonText}
               />
             ))}
           </div>
