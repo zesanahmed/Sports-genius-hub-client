@@ -21,6 +21,7 @@ const programs = [
       "Basic coaching support",
     ],
     buttonText: "GET NOW",
+    className: "bg-black",
   },
 ];
 
@@ -53,6 +54,7 @@ const ClubMembership = () => {
                 period={item.period}
                 features={item.features}
                 buttonText={item.buttonText}
+                className={item.className}
               />
             ))}
           </div>

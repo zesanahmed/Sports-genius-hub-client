@@ -8,6 +8,7 @@ import ProgramsSection from "./ProgramsSection";
 import CounterSection from "./CounterSection";
 import PopularProducts from "./PopularProducts";
 import ClubMembership from "./ClubMembership";
+import SportsSection from "./SportsSection";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <ProgramsSection />
       <PopularProducts />
       <ClubMembership />
+      <SportsSection />
       <PopularClasses />
       <PopularInstructors />
       <InfoSection />

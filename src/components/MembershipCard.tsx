@@ -7,6 +7,7 @@ type PricingCardProps = {
   period: string;
   features: string[];
   buttonText: string;
+  className?: string;
 };
 
 const MembershipCard = ({
@@ -16,9 +17,10 @@ const MembershipCard = ({
   period,
   features,
   buttonText,
+  className,
 }: PricingCardProps) => {
   return (
-    <div className="border shadow-md px-6 py-16 w-64 text-center bg-white">
+    <div className={"border shadow-md px-6 py-16 w-64 text-center bg-white"}>
       <h3 className="text-3xl font-semibold text-black mb-1">{title}</h3>
       <p className="text-lg text-gray-500 font-sans mb-4">{subtitle}</p>
 
@@ -36,7 +38,7 @@ const MembershipCard = ({
         ))}
       </ul>
       <Link to="/membership">
-        <button className="btn-primary">{buttonText}</button>
+        <button className={`btn-primary ${className}`}>{buttonText}</button>
       </Link>
     </div>
   );
