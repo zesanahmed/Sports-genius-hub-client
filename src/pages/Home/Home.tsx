@@ -7,6 +7,7 @@ import PopularProducts from "./PopularProducts";
 import ClubMembership from "./ClubMembership";
 import SportsSection from "./SportsSection";
 import MakeYourGame from "./MakeYourGame";
+import SubscribeSection from "./SubscribeSection";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <ClubMembership />
       <SportsSection />
       <MakeYourGame />
+      <SubscribeSection />
     </div>
   );
 };
