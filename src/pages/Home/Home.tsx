@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import PopularInstructors from "./PopularInstructors";
-import InfoSection from "./InfoSection";
-import PopularClasses from "./PopularClasses";
 import TopSlider from "./TopSlider";
 import WelcomeClub from "./WelcomeClub";
 import ProgramsSection from "./ProgramsSection";
@@ -23,9 +21,6 @@ const Home = () => {
       <PopularProducts />
       <ClubMembership />
       <SportsSection />
-      <PopularClasses />
-      <PopularInstructors />
-      <InfoSection />
     </div>
   );
 };
