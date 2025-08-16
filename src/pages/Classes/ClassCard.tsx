@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
+import { useAuth } from "../../context/AuthContext";
 
 const ClassCard = ({ cls }) => {
   const {
@@ -14,7 +14,7 @@ const ClassCard = ({ cls }) => {
     price,
     _id,
   } = cls;
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const [, refetch] = useCart();
   const navigate = useNavigate();
   const location = useLocation();

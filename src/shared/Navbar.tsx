@@ -1,19 +1,32 @@
 import { useContext, useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
-import { AuthContext } from "../context/AuthProvider";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleLogout = () => {
     logOut();
+  };
+
+  const handleDashboardClick = () => {
+    if (!user) {
+      navigate("/login", { state: { from: location } });
+      return;
+    }
+    if (user.role === "admin") {
+      navigate("/dashboard/admin");
+    } else {
+      navigate("/dashboard/user");
+    }
   };
 
   const navLinks = [
@@ -62,6 +75,7 @@ const Navbar = () => {
       ],
     },
     { name: "Contact", path: "/contact" },
+    { name: "Dashboard", onClick: handleDashboardClick },
   ];
 
   const isDropdownActive = (dropdown) => {
@@ -190,6 +204,13 @@ const Navbar = () => {
                   >
                     {link.name}
                   </span>
+                ) : link.onClick ? ( // ⬅ Dashboard এর জন্য
+                  <button
+                    onClick={link.onClick}
+                    className="hover:text-blue-500 pb-1"
+                  >
+                    {link.name}
+                  </button>
                 ) : (
                   <NavLink
                     to={link.path}

@@ -41,17 +41,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const login = async (email: string, password: string) => {
-    const { data } = await api.post("/api/auth/login", { email, password });
+    const { data } = await api.post("/auth/login", { email, password });
     persist(data.token, data.user);
   };
 
   const register = async (email: string, password: string) => {
-    const { data } = await api.post("/api/auth/register", { email, password });
+    const { data } = await api.post("/auth/register", { email, password });
     persist(data.token, data.user);
   };
 
   const refreshMe = async () => {
-    const { data } = await api.get("/api/auth/me");
+    const { data } = await api.get("/auth/me");
     setUser(data);
     localStorage.setItem("auth_user", JSON.stringify(data));
   };

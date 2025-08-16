@@ -7,9 +7,7 @@ import ApprovedClasses from "../pages/Classes/ApprovedClasses";
 import UserDashboard from "../layout/UserDashboard";
 import ErrorPage from "../pages/Error/ErrorPage";
 import MySelectedClasses from "../pages/Dashboard/User/MySelectedClasses";
-import MyClasses from "../pages/Dashboard/Instructor/MyClasses";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
-import UpdateClass from "../pages/Dashboard/Instructor/UpdateClass";
 import List from "../pages/Blog/List";
 import Standard from "../pages/Blog/Standard";
 import Masonry from "../pages/Blog/Masonry";
@@ -70,8 +68,6 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <UserDashboard /> }, // default dashboard home
       { path: "mySelectedClass", element: <MySelectedClasses /> },
-      { path: "myClasses", element: <MyClasses /> },
-      { path: "updateClass", element: <UpdateClass /> },
     ],
   },
   // Admin Dashboard (Protected)

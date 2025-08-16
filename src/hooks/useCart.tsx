@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AuthContext } from "../context/AuthProvider";
+import { useAuth } from "../context/AuthContext";
 
 const useCart = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
 
   const { refetch, data: cart = [] } = useQuery({
     queryKey: ["carts", user?.email],

@@ -13,15 +13,15 @@ import {
   AiOutlineIdcard,
 } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../context/AuthProvider";
 import useUsers from "../hooks/useUser";
+import { useAuth } from "../context/AuthContext";
 
 const Dashboard = () => {
   const [cart] = useCart();
   const [users] = useUsers();
   const [role, setRole] = useState(null);
 
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const userEmail = user.email;
 
   useEffect(() => {
