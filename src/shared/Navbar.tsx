@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleLogout = () => {
-    logOut();
+    logout();
   };
 
   const handleDashboardClick = () => {
