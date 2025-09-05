@@ -1,23 +1,45 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState, useRef } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const NavLinks = ({ navLinks, isDropdownActive }) => {
-  const location = useLocation();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (name: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenDropdown(name);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 200); // <-- 200ms delay before hiding
+  };
+
   return (
     <>
       {navLinks.map((link) => (
-        <div className="relative group" key={link.name}>
+        <div
+          className="relative"
+          key={link.name}
+          onMouseEnter={() => handleMouseEnter(link.name)}
+          onMouseLeave={handleMouseLeave}
+        >
           {link.dropdown ? (
             <span
               className={`cursor-pointer pb-1 ${
-                isDropdownActive(link.dropdown, location)
-                  ? "border-b-2 border-blue-500"
-                  : "hover:text-lime-300"
+                isDropdownActive(link.dropdown)
+                  ? "border-b-2"
+                  : "hover:text-[rgb(175,214,57)]"
               }`}
             >
               {link.name}
             </span>
           ) : link.onClick ? (
-            <button onClick={link.onClick} className="hover:text-blue-500 pb-1">
+            <button
+              onClick={link.onClick}
+              className="hover:text-[rgb(175,214,57)] pb-1"
+            >
               {link.name}
             </button>
           ) : (
@@ -25,18 +47,22 @@ const NavLinks = ({ navLinks, isDropdownActive }) => {
               to={link.path}
               className={({ isActive }) =>
                 isActive
-                  ? "pb-1 border-b-2 border-blue-500"
-                  : "hover:text-blue-500 pb-1"
+                  ? "pb-1 border-b-2 border-[rgb(175,214,57)]"
+                  : "hover:text-[rgb(175,214,57)] pb-1"
               }
             >
               {link.name}
             </NavLink>
           )}
 
-          {link.dropdown && (
-            <div className="absolute hidden group-hover:flex flex-col bg-gray-900 shadow-md mt-1 z-10 p-2 space-y-1 text-lg left-0 animate-fade-in min-w-40">
+          {link.dropdown && openDropdown === link.name && (
+            <div className="absolute flex flex-col bg-base-content shadow-md mt-4 z-10 p-6 space-y-3 font-sans text-base left-0 animate-fade-in min-w-60">
               {link.dropdown.map((sub, idx) => (
-                <Link key={idx} to={sub.path} className="hover:text-blue-500">
+                <Link
+                  key={idx}
+                  to={sub.path}
+                  className="hover:text-[rgb(175,214,57)]"
+                >
                   {sub.name}
                 </Link>
               ))}

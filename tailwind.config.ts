@@ -9,6 +9,12 @@ const config: Config = {
         sans: ['"Barlow Condensed"', "sans-serif"], // default
         barlow: ['"Barlow Condensed"', "sans-serif"], // optional
       },
+      colors: {
+        primary: {
+          DEFAULT: "rgb(175,214,57)",
+          dark: "rgb(146,181,41)",
+        },
+      },
     },
   },
   plugins: [require("daisyui")],

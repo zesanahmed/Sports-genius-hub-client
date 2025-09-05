@@ -1,30 +1,14 @@
 import { Link } from "react-router-dom";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
-
-interface MobileMenuProps {
-  isDrawerOpen: boolean;
-  navLinks: {
-    name: string;
-    path?: string;
-    onClick?: () => void;
-    dropdown?: { name: string; path: string }[];
-  }[];
-  mobileDropdown: string;
-  setMobileDropdown: (value: string) => void;
-  user: any;
-  handleLogout: () => void;
-}
+import NavSearchBar from "./NavSearchBar";
 
 const MobileMenu = ({
-  isDrawerOpen,
   navLinks,
   mobileDropdown,
   setMobileDropdown,
   user,
   handleLogout,
-}: MobileMenuProps) => {
-  if (!isDrawerOpen) return null;
-
+}) => {
   return (
     <div className="md:hidden bg-gray-800 shadow-lg px-4 py-2 space-y-3 animate-slide-down">
       <div className="flex items-center space-x-1">

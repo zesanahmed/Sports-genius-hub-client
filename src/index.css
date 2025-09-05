@@ -17,9 +17,9 @@
   .primary-bg {
     @apply bg-[rgb(175,214,57)];
   }
-  .primary-text {
+  /* .primary-text {
     @apply text-[rgb(175,214,57)];
-  }
+  } */
   .hover-primary-text:hover {
     @apply text-[rgb(175,214,57)];
   }
