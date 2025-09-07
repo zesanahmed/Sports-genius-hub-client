@@ -2,7 +2,7 @@ export const navLinks = (handleDashboardClick: () => void) => [
   {
     name: "Home",
     dropdown: [
-      { name: "Cricket Club", path: "club/cricket" },
+      { name: "Cricket Club", path: "cricketClub" },
       { name: "Coaching", path: "/coaching" },
       { name: "Cricket Equipment Store", path: "/store" },
     ],

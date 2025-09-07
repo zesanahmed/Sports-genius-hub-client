@@ -11,7 +11,7 @@ import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
 import List from "../pages/Blog/List";
 import Standard from "../pages/Blog/Standard";
 import Masonry from "../pages/Blog/Masonry";
-import CricketClub from "../pages/club/CricketClub";
+import CricketClub from "../pages/CricketClub/CricketClub";
 import Membership from "../pages/Membership/Membership";
 import { PrivateRoute } from "./PrivateRoute";
 import { AdminRoute } from "./AdminRoute";
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <Masonry />,
       },
       {
-        path: "club/cricket",
+        path: "cricketClub",
         element: <CricketClub />,
       },
       {
