@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import CricketClubBanner from "./CricketClubBanner";
 import OfferSection from "./OfferSection";
+import PersonalSection from "./PersonalSection";
 
 const CricketClub = () => {
   return (
@@ -10,6 +11,7 @@ const CricketClub = () => {
       </Helmet>
       <CricketClubBanner />
       <OfferSection />
+      <PersonalSection />
     </div>
   );
 };
