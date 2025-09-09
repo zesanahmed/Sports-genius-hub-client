@@ -20,7 +20,7 @@ const CricketClubBanner = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-3xl md:text-6xl font-bold"
+            className="text-3xl md:text-7xl font-bold mt-36"
           >
             Elevate Your Game with Our Premier Cricket and Fitness Club
           </motion.h1>
@@ -30,24 +30,20 @@ const CricketClubBanner = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-sm md:text-xl text-white font-sans"
           >
-            Premium cricket and fitness club
+            The ultimate destination for cricket enthusiasts and fitness seekers
           </motion.p>
+
+          <button className="btn-primary hover:bg-white hover:text-[rgb(146,181,41)]">
+            Join our club
+          </button>
 
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-2 cursor-pointer mt-20"
+            className="flex justify-center cursor-pointer mt-14"
           >
-            <ScrollLink
-              to="below-banner"
-              smooth={true}
-              duration={500}
-              className="text-sm md:text-xl border-b border-white hover-primary-text"
-            >
-              SCROLL DOWN
-            </ScrollLink>
-            <FaArrowDown className="primary-text animate-bounce" />
+            <FaArrowDown className="text-4xl animate-bounce" />
           </motion.div>
         </div>
       </div>

@@ -3,7 +3,6 @@ import img2 from "../../assets/sports/sports1.jpg";
 import img3 from "../../assets/sports/sports2.jpg";
 import img4 from "../../assets/sports/sports3.jpg";
 import img5 from "../../assets/sports/sports4.jpg";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const images = [
