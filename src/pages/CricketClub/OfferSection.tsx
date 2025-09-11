@@ -3,19 +3,19 @@ import { FaTools, FaTrophy, FaShower, FaUserTie } from "react-icons/fa";
 
 const offers = [
   {
-    icon: <FaTools size={80} className="text-blue-500/90" />,
+    icon: <FaTools size={80} />,
     title: "PREMIUM TOOLS",
   },
   {
-    icon: <FaTrophy size={80} className="text-blue-500/90" />,
+    icon: <FaTrophy size={80} />,
     title: "TOP TOURNAMENTS",
   },
   {
-    icon: <FaShower size={80} className="text-blue-500/90" />,
+    icon: <FaShower size={80} />,
     title: "LOCKERS & SHOWERS",
   },
   {
-    icon: <FaUserTie size={80} className="text-blue-500/90" />,
+    icon: <FaUserTie size={80} />,
     title: "EXPERT SUPERVISION",
   },
 ];
@@ -47,15 +47,21 @@ const OfferSection = () => {
       <section className="mb-10 bg-white">
         <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {offers.map((offer, idx) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.2 }}
+              viewport={{ once: true }}
               key={idx}
               className="relative overflow-hidden group cursor-pointer flex flex-col h-60 py-2 group border-r-2 border-gray-400/30"
             >
-              <div className="mb-6">{offer.icon}</div>
+              <div className="mb-6 text-blue-500/90 group-hover:text-base-content">
+                {offer.icon}
+              </div>
               <h3 className="text-2xl font-semibold mb-6">{offer.title}</h3>
 
               <button className="flex items-center gap-2 py-2  rounded-full overflow-hidden">
-                {/* Hidden text, slides in on hover */}
+                {/* Hidden text, slides in on hover*/}
                 <span className="max-w-0 overflow-hidden text-lg font-sans font-semibold whitespace-nowrap transition-all duration-800 ease-in-out group-hover:max-w-xs">
                   Read More
                 </span>
@@ -64,7 +70,7 @@ const OfferSection = () => {
                   →
                 </span>
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
