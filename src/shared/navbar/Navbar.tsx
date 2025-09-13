@@ -45,10 +45,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const absoluteRoutes = ["/", "/cricketClub"];
+
+  const isAbsolute = absoluteRoutes.includes(location.pathname);
   return (
     <motion.nav
       className={`w-full z-50 transition-all duration-500 ${
-        isScrolled
+        isScrolled || !isAbsolute
           ? "sticky top-0 bg-base-content text-white shadow-md"
           : "absolute top-0 left-0 text-white"
       }`}

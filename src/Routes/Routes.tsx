@@ -16,6 +16,7 @@ import Membership from "../pages/Membership/Membership";
 import { PrivateRoute } from "./PrivateRoute";
 import { AdminRoute } from "./AdminRoute";
 import AdminDashBoard from "../layout/AdminDashBoard";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   // public routes
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/membership",
         element: <Membership />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
