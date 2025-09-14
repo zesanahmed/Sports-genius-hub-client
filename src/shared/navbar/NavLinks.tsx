@@ -56,7 +56,7 @@ const NavLinks = ({ navLinks, isDropdownActive }) => {
           )}
 
           {link.dropdown && openDropdown === link.name && (
-            <div className="absolute flex flex-col bg-base-content shadow-md mt-4 z-10 p-6 space-y-3 font-sans text-base left-0 animate-fade-in min-w-60">
+            <div className="absolute flex flex-col bg-base-content shadow-md mt-4 z-10 p-6 space-y-3 font-sans text-white text-base left-0 animate-fade-in min-w-60">
               {link.dropdown.map((sub, idx) => (
                 <Link
                   key={idx}

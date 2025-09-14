@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import ContactBanner from "./ContactBanner";
 import ContactSection from "./ContactSection";
 
 const Contact = () => {

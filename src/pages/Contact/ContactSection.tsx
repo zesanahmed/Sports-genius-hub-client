@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {
+  FaEnvelope,
+  FaLocationArrow,
+  FaPaperPlane,
+  FaPhone,
+} from "react-icons/fa";
 
 interface FormData {
   name: string;
@@ -19,6 +25,7 @@ const ContactSection: React.FC = () => {
   });
 
   const [status, setStatus] = useState<string>("");
+  const [agreed, setAgreed] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -42,27 +49,33 @@ const ContactSection: React.FC = () => {
     <section className="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-12">
       {/* Left Info */}
       <div>
-        <p className="uppercase tracking-wide text-gray-500 text-sm">
+        <p className="uppercase tracking-wide text-black font-sans text-md font-semibold">
           Contact Us
         </p>
-        <h2 className="text-3xl font-bold mt-2 mb-4">
+        <h2 className="text-6xl font-semibold mt-2 mb-5">
           Have Questions? <br /> Get in Touch!
         </h2>
-        <p className="text-gray-500 mb-6">
-          Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim.
+        <p className="text-gray-500 font-sans text-lg mb-7">
+          We're here to help and answer any questions you might have. We look
+          forward to hearing from you!
         </p>
-        <ul className="space-y-4">
-          <li>📍 11792 London Rd, Derby, OH 43117</li>
-          <li>📞 +1 800 555 45 65</li>
-          <li>✉️ info@email.com</li>
+        <ul className="space-y-5 text-lg font-sans">
+          <li className="flex items-center gap-5">
+            <FaLocationArrow className="text-blue-500/90" /> Dhaka, Bangladesh
+          </li>
+          <li className="flex items-center gap-5">
+            <FaPhone className="text-blue-500/90" /> +880 1954500994
+          </li>
+          <li className="flex items-center gap-5">
+            <FaEnvelope className="text-blue-500/90" /> zesanahmed593@gmail.com
+          </li>
         </ul>
       </div>
 
       {/* Right Form */}
       <form
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg font-sans"
       >
         <input
           className="border-b border-gray-300 focus:outline-none p-2"
@@ -109,13 +122,23 @@ const ContactSection: React.FC = () => {
           required
         />
         <div className="md:col-span-2 flex items-center gap-4">
-          <button
-            type="submit"
-            className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-3 rounded shadow"
-          >
-            ✈️ Get in Touch
+          <button type="submit" className="btn-primary flex items-center gap-2">
+            <FaPaperPlane /> Get in Touch
           </button>
           <span className="text-sm text-gray-500">{status}</span>
+        </div>
+        <div className="flex items-center md:col-span-2 space-x-2">
+          <input
+            type="checkbox"
+            id="consent"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            required
+            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <label htmlFor="consent" className="text-sm text-black ">
+            I agree that my data is collected and stored.
+          </label>
         </div>
       </form>
     </section>

@@ -46,12 +46,16 @@ const Navbar = () => {
   }, []);
 
   const absoluteRoutes = ["/", "/cricketClub"];
+  const textBaseRoutes = ["/contact"];
 
   const isAbsolute = absoluteRoutes.includes(location.pathname);
+  const isTextBase = textBaseRoutes.includes(location.pathname);
   return (
     <motion.nav
       className={`w-full z-50 transition-all duration-500 ${
-        isScrolled || !isAbsolute
+        isTextBase
+          ? "text-base-content"
+          : isScrolled || !isAbsolute
           ? "sticky top-0 bg-base-content text-white shadow-md"
           : "absolute top-0 left-0 text-white"
       }`}
@@ -80,15 +84,16 @@ const Navbar = () => {
           {!isScrolled && (
             <div className="flex items-center space-x-12">
               <NavSearchBar />
-              <button className="btn btn-sm btn-outline h-9 w-9">
-                <FaShoppingCart />
-              </button>
+
+              <NavAuthButtons user={user} handleLogout={handleLogout} />
               <NavUserAvatar user={user} />
             </div>
           )}
           <div className="flex items-center justify-end space-x-12 w-full text-2xl">
             <NavLinks navLinks={navLinks} isDropdownActive={isDropdownActive} />
-            <NavAuthButtons user={user} handleLogout={handleLogout} />
+            <button className="btn btn-sm btn-outline h-9 w-9">
+              <FaShoppingCart />
+            </button>
           </div>
         </div>
       </div>
