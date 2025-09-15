@@ -2,6 +2,7 @@ import React from "react";
 import CoachingBanner from "./CoachingBanner";
 import { Helmet } from "react-helmet-async";
 import WelcomeCoaching from "./WelcomeCoaching";
+import TrainingSection from "./TrainingSection";
 
 const Coaching = () => {
   return (
@@ -11,6 +12,7 @@ const Coaching = () => {
       </Helmet>
       <CoachingBanner />
       <WelcomeCoaching />
+      <TrainingSection />
     </div>
   );
 };
