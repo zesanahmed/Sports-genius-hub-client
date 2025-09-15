@@ -102,6 +102,7 @@ const ContactSection: React.FC = () => {
           placeholder="Phone"
           value={form.phone}
           onChange={handleChange}
+          required
         />
         <input
           className="border-b border-gray-300 focus:outline-none p-2"

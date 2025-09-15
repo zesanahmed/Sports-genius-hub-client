@@ -17,6 +17,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { AdminRoute } from "./AdminRoute";
 import AdminDashBoard from "../layout/AdminDashBoard";
 import Contact from "../pages/Contact/Contact";
+import Coaching from "../pages/club/Coaching/Coaching";
 
 const router = createBrowserRouter([
   // public routes
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/coaching",
+        element: <Coaching />,
       },
     ],
   },
