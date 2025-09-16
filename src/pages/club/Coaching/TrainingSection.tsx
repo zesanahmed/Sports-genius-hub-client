@@ -100,7 +100,8 @@ const TrainingSection = () => {
 
         <motion.div
           initial={{ y: 100, opacity: 0 }}
-          animate={controls}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="absolute bottom-10 -left-15 md:w-64 bg-[rgb(175,214,57)] text-white p-10 shadow-lg"
         >

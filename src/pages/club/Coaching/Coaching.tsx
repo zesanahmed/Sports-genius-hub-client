@@ -3,6 +3,7 @@ import CoachingBanner from "./CoachingBanner";
 import { Helmet } from "react-helmet-async";
 import WelcomeCoaching from "./WelcomeCoaching";
 import TrainingSection from "./TrainingSection";
+import ArticleSection from "./ArticleSection";
 
 const Coaching = () => {
   return (
@@ -13,6 +14,7 @@ const Coaching = () => {
       <CoachingBanner />
       <WelcomeCoaching />
       <TrainingSection />
+      <ArticleSection />
     </div>
   );
 };
