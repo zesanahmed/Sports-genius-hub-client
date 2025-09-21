@@ -3,6 +3,7 @@ import CricketClubBanner from "./CricketClubBanner";
 import OfferSection from "./OfferSection";
 import PersonalSection from "./PersonalSection";
 import PricingSection from "./PricingSection";
+import CoachingProgramme from "./CoachingProgramme";
 
 const CricketClub = () => {
   return (
@@ -12,6 +13,7 @@ const CricketClub = () => {
       </Helmet>
       <CricketClubBanner />
       <OfferSection />
+      <CoachingProgramme />
       <PersonalSection />
       <PricingSection />
     </div>

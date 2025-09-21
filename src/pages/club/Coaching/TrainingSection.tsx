@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import img from "../../../assets/sports/coaching-training.jpeg";
+import Counter from "./Counter";
 type Question = {
   id: number;
   question: string;
@@ -28,32 +29,8 @@ const questions: Question[] = [
   },
 ];
 
-const Counter = ({ from, to }: { from: number; to: number }) => {
-  const [count, setCount] = useState(from);
-
-  useEffect(() => {
-    let start = from;
-    const interval = setInterval(() => {
-      start += 1;
-      if (start > to) {
-        clearInterval(interval);
-      } else {
-        setCount(start);
-      }
-    }, 30);
-    return () => clearInterval(interval);
-  }, [from, to]);
-
-  return <span>{count}</span>;
-};
-
 const TrainingSection = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({ y: 0, opacity: 1 });
-  }, [controls]);
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-20 mb-20 h-[600px]">
@@ -116,7 +93,8 @@ const TrainingSection = () => {
 
         <motion.div
           initial={{ y: 100, opacity: 0 }}
-          animate={controls}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute bottom-10 md:w-64 right-10 bg-black text-white p-10 shadow-lg"
         >

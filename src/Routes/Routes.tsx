@@ -18,6 +18,7 @@ import { AdminRoute } from "./AdminRoute";
 import AdminDashBoard from "../layout/AdminDashBoard";
 import Contact from "../pages/Contact/Contact";
 import Coaching from "../pages/club/Coaching/Coaching";
+import CricketEquipment from "../pages/CricketEquipmentStore/CricketEquipment";
 
 const router = createBrowserRouter([
   // public routes
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/coaching",
         element: <Coaching />,
+      },
+      {
+        path: "/store",
+        element: <CricketEquipment />,
       },
     ],
   },
